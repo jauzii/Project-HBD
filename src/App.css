@@ -550,3 +550,60 @@
   font-size: clamp(1.15rem, 5vw, 1.55rem);
   line-height: 1.45;
 }
+
+.wish-button-secondary {
+  margin-left: 10px;
+}
+
+.birthday-letter {
+  min-height: calc(100svh - 32px);
+  display: grid;
+  place-items: center;
+  padding: 72px 24px 40px;
+}
+
+.letter-paper {
+  width: min(100%, 560px);
+  border: 1px solid var(--button-border);
+  border-radius: 24px;
+  padding: clamp(24px, 8vw, 42px);
+  color: var(--text);
+  background: var(--letter-paper);
+  box-shadow: var(--button-shadow);
+}
+
+.letter-kicker {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.letter-title {
+  margin: 0 0 22px;
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: clamp(2rem, 10vw, 3.35rem);
+  line-height: 1;
+}
+
+.letter-paper p {
+  margin: 0;
+  font-size: clamp(1rem, 4vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.letter-paper p + p {
+  margin-top: 18px;
+}
+
+@media (max-width: 420px) {
+  .wish-button-secondary {
+    margin-left: 0;
+  }
+
+  .wish-button {
+    width: 100%;
+  }
+}

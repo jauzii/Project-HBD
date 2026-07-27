@@ -7,7 +7,7 @@ const wishes = [
   'May small wins keep finding you at exactly the right time.',
 ]
 
-function WishGenerator() {
+function WishGenerator({ onContinue }) {
   const [currentWish, setCurrentWish] = useState(wishes[0])
   const [flipCount, setFlipCount] = useState(0)
 
@@ -38,6 +38,9 @@ function WishGenerator() {
 
         <button className="wish-button" type="button" onClick={generateWish}>
           Generate wish
+        </button>
+        <button className="wish-button wish-button-secondary" type="button" onClick={onContinue}>
+          Read letter
         </button>
       </div>
     </section>

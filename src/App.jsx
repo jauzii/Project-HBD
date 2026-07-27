@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import AchievementModal from './components/AchievementModal'
+import BirthdayLetter from './components/BirthdayLetter'
 import CandleGame from './components/CandleGame'
 import GiftBox from './components/GiftBox'
 import Greeting from './components/Greeting'
@@ -20,7 +21,10 @@ function App() {
         {currentStep === 'game' && (
           <CandleGame onComplete={() => setAchievementUnlocked(true)} />
         )}
-        {currentStep === 'wish' && <WishGenerator />}
+        {currentStep === 'wish' && (
+          <WishGenerator onContinue={() => setCurrentStep('letter')} />
+        )}
+        {currentStep === 'letter' && <BirthdayLetter />}
         <AchievementModal
           open={achievementUnlocked}
           onContinue={() => {
