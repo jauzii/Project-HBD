@@ -242,6 +242,25 @@
     greeting-caret 0.8s step-end infinite;
 }
 
+.greeting-button {
+  margin-top: 28px;
+  min-height: 44px;
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  padding: 0 22px;
+  color: var(--text);
+  background: var(--button-surface);
+  box-shadow: var(--button-shadow);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.greeting-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 @keyframes greeting-typing {
   from {
     max-width: 0;
@@ -391,4 +410,143 @@
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.achievement-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(76, 70, 84, 0.22);
+}
+
+.achievement-modal {
+  width: min(100%, 420px);
+  border: 1px solid var(--button-border);
+  border-radius: 24px;
+  padding: 34px 24px;
+  text-align: center;
+  background: var(--surface);
+  box-shadow: var(--achievement-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-glow {
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: var(--glow);
+  filter: blur(28px);
+  opacity: 0.78;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.achievement-kicker,
+.achievement-title,
+.achievement-message {
+  position: relative;
+}
+
+.achievement-kicker {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.achievement-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: clamp(2rem, 10vw, 3.4rem);
+  line-height: 1;
+}
+
+.achievement-message {
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.achievement-button,
+.wish-button {
+  margin-top: 28px;
+  min-height: 44px;
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  padding: 0 22px;
+  color: var(--text);
+  background: var(--button-surface);
+  box-shadow: var(--button-shadow);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.achievement-button {
+  position: relative;
+}
+
+.achievement-button:focus-visible,
+.wish-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wish-generator {
+  min-height: calc(100svh - 32px);
+  display: grid;
+  place-items: center;
+  padding: 72px 24px 40px;
+}
+
+.wish-card-wrap {
+  width: min(100%, 520px);
+  text-align: center;
+  perspective: 900px;
+}
+
+.wish-kicker {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wish-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: clamp(2rem, 10vw, 3.3rem);
+  line-height: 1;
+}
+
+.wish-card {
+  min-height: 180px;
+  margin-top: 32px;
+  border: 1px solid var(--button-border);
+  border-radius: 24px;
+  padding: 28px 24px;
+  display: grid;
+  place-items: center;
+  background: var(--wish-surface);
+  box-shadow: var(--button-shadow);
+  transform-style: preserve-3d;
+}
+
+.wish-card p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.15rem, 5vw, 1.55rem);
+  line-height: 1.45;
 }

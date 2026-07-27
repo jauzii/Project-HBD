@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const candles = [1, 2, 3]
 
-function CandleGame() {
+function CandleGame({ onComplete }) {
   const [blownCandles, setBlownCandles] = useState([])
 
   const blowCandle = (candleId) => {
@@ -11,7 +11,12 @@ function CandleGame() {
       return
     }
 
-    setBlownCandles([...blownCandles, candleId])
+    const nextBlownCandles = [...blownCandles, candleId]
+    setBlownCandles(nextBlownCandles)
+
+    if (nextBlownCandles.length === candles.length) {
+      onComplete?.()
+    }
   }
 
   const completed = blownCandles.length === candles.length

@@ -2,8 +2,19 @@ import { useState } from 'react'
 import Confetti from 'react-confetti'
 import { motion } from 'framer-motion'
 
-function GiftBox() {
+function GiftBox({ onOpened }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const openGift = () => {
+    if (isOpen) {
+      return
+    }
+
+    setIsOpen(true)
+    window.setTimeout(() => {
+      onOpened?.()
+    }, 900)
+  }
 
   return (
     <section className="gift-screen" aria-label="Open birthday gift">
@@ -16,7 +27,7 @@ function GiftBox() {
           type="button"
           aria-pressed={isOpen}
           aria-label={isOpen ? 'Gift opened' : 'Open gift'}
-          onClick={() => setIsOpen(true)}
+          onClick={openGift}
         >
           <motion.span
             className="gift-lid"

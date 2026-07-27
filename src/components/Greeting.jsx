@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-function Greeting() {
+function Greeting({ onContinue }) {
   return (
     <section className="greeting-screen" aria-labelledby="greeting-title">
       <motion.div
@@ -16,6 +16,9 @@ function Greeting() {
         <p className="greeting-message">
           <span>Hope your day feels bright, silly, and full of tiny wins.</span>
         </p>
+        <button className="greeting-button" type="button" onClick={onContinue}>
+          Continue
+        </button>
       </motion.div>
     </section>
   )
