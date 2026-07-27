@@ -1,0 +1,263 @@
+.app-shell {
+  min-height: 100svh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 16px;
+}
+
+.app-stage {
+  width: min(100%, 960px);
+  min-height: calc(100svh - 32px);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-screen {
+  min-height: calc(100svh - 32px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.loading-card {
+  width: min(100%, 420px);
+  text-align: center;
+}
+
+.loading-kicker {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.loading-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: clamp(2rem, 12vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.loading-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.gift-screen {
+  min-height: calc(100svh - 32px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  position: relative;
+}
+
+.gift-content {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+}
+
+.gift-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gift-box {
+  width: min(58vw, 240px);
+  height: min(58vw, 240px);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 0;
+}
+
+.gift-box:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 8px;
+  border-radius: 20px;
+}
+
+.gift-lid,
+.gift-body {
+  position: absolute;
+  border-radius: 18px;
+  background: var(--gift);
+  box-shadow: var(--gift-shadow);
+}
+
+.gift-lid {
+  width: 86%;
+  height: 28%;
+  top: 20%;
+  z-index: 3;
+}
+
+.gift-body {
+  width: 76%;
+  height: 54%;
+  bottom: 12%;
+  z-index: 1;
+}
+
+.gift-ribbon {
+  position: absolute;
+  z-index: 4;
+  background: var(--ribbon);
+  pointer-events: none;
+}
+
+.gift-ribbon-vertical {
+  width: 16%;
+  height: 62%;
+  top: 20%;
+  border-radius: 12px;
+}
+
+.gift-ribbon-horizontal {
+  width: 86%;
+  height: 12%;
+  top: 45%;
+  border-radius: 999px;
+}
+
+.gift-glow {
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  border-radius: 999px;
+  background: var(--glow);
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.gift-box-open {
+  cursor: default;
+}
+
+.music-control {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+}
+
+.music-button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--button-surface);
+  box-shadow: var(--button-shadow);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.music-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .music-control {
+    top: 14px;
+    right: 14px;
+  }
+
+  .music-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.greeting-screen {
+  min-height: calc(100svh - 32px);
+  display: grid;
+  place-items: center;
+  padding: 72px 24px 32px;
+}
+
+.greeting-card {
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.greeting-kicker {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.greeting-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: clamp(2.5rem, 14vw, 5rem);
+  line-height: 0.95;
+}
+
+.greeting-message {
+  width: min(100%, 44ch);
+  margin: 24px auto 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.greeting-message span {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  animation:
+    greeting-typing 2.8s steps(58, end) both,
+    greeting-caret 0.8s step-end infinite;
+}
+
+@keyframes greeting-typing {
+  from {
+    max-width: 0;
+  }
+}
+
+@keyframes greeting-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 520px) {
+  .greeting-message span {
+    white-space: normal;
+    animation: none;
+    border-right: 0;
+  }
+}
