@@ -195,7 +195,7 @@
 }
 
 .greeting-screen {
-  min-height: calc(100svh - 32px);
+  min-height: min(640px, calc(100svh - 32px));
   display: grid;
   place-items: center;
   padding: 72px 24px 32px;
@@ -260,4 +260,135 @@
     animation: none;
     border-right: 0;
   }
+}
+
+.candle-game {
+  display: grid;
+  place-items: center;
+  padding: 40px 24px 56px;
+}
+
+.candle-game-card {
+  width: min(100%, 520px);
+  text-align: center;
+}
+
+.candle-game-kicker {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.candle-game-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Poppins, Inter, system-ui, sans-serif;
+  font-size: clamp(2rem, 10vw, 3.2rem);
+  line-height: 1;
+}
+
+.cake {
+  width: min(100%, 320px);
+  margin: 36px auto 0;
+  display: grid;
+  justify-items: center;
+  position: relative;
+}
+
+.candles {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: clamp(18px, 7vw, 34px);
+  height: 92px;
+  position: relative;
+  z-index: 2;
+}
+
+.candle {
+  width: 34px;
+  height: 86px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  justify-items: center;
+  align-content: end;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.candle:disabled {
+  cursor: default;
+}
+
+.candle:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 14px;
+}
+
+.flame {
+  width: 18px;
+  height: 24px;
+  border-radius: 999px 999px 999px 0;
+  background: var(--flame);
+  transform: rotate(-45deg);
+  box-shadow: 0 0 18px rgba(245, 154, 74, 0.42);
+}
+
+.wick {
+  width: 3px;
+  height: 8px;
+  background: var(--text);
+  border-radius: 999px;
+}
+
+.candle-stick {
+  width: 20px;
+  height: 48px;
+  border-radius: 8px 8px 4px 4px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--candle),
+    var(--candle) 7px,
+    var(--surface) 7px,
+    var(--surface) 12px
+  );
+  border: 1px solid var(--button-border);
+}
+
+.candle-blown .wick {
+  margin-top: 24px;
+}
+
+.cake-top,
+.cake-base {
+  width: 100%;
+  border-radius: 22px;
+}
+
+.cake-top {
+  height: 46px;
+  background: var(--cake-frosting);
+  position: relative;
+  z-index: 1;
+}
+
+.cake-base {
+  height: 76px;
+  margin-top: -10px;
+  background: var(--cake);
+  box-shadow: var(--button-shadow);
+}
+
+.candle-game-status {
+  min-height: 1.6em;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }

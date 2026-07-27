@@ -11,6 +11,10 @@
   --button-surface: rgba(255, 250, 240, 0.9);
   --button-border: rgba(76, 70, 84, 0.14);
   --button-shadow: 0 10px 24px rgba(76, 70, 84, 0.12);
+  --flame: #f59a4a;
+  --candle: #d8b4d8;
+  --cake-frosting: #f2d7c3;
+  --cake: #b7c4a1;
   --shadow: 0 18px 45px rgba(76, 70, 84, 0.14);
 
   font-family: Inter, Poppins, system-ui, sans-serif;
