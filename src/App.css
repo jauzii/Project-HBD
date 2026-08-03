@@ -4,6 +4,7 @@
   align-items: stretch;
   justify-content: center;
   padding: 16px;
+  overflow-x: hidden;
 }
 
 .app-stage {
@@ -710,11 +711,56 @@
 }
 
 @media (max-width: 420px) {
+  .app-shell {
+    padding: 10px;
+  }
+
+  .app-stage {
+    min-height: calc(100svh - 20px);
+    border-radius: 18px;
+  }
+
+  .loading-screen,
+  .gift-screen,
+  .wish-generator,
+  .birthday-letter,
+  .ending-screen {
+    min-height: calc(100svh - 20px);
+    padding-inline: 18px;
+  }
+
+  .greeting-screen {
+    min-height: min(620px, calc(100svh - 20px));
+    padding-inline: 18px;
+  }
+
+  .candle-game {
+    padding-inline: 18px;
+  }
+
+  .gift-box {
+    width: min(64vw, 220px);
+    height: min(64vw, 220px);
+  }
+
+  .cake {
+    width: min(100%, 286px);
+  }
+
+  .candles {
+    gap: clamp(14px, 6vw, 28px);
+  }
+
   .wish-button-secondary {
     margin-left: 0;
   }
 
-  .wish-button {
+  .wish-button,
+  .letter-button {
     width: 100%;
+  }
+
+  .balloon-three {
+    left: 44%;
   }
 }
