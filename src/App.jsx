@@ -2,6 +2,7 @@ import { useState } from 'react'
 import AchievementModal from './components/AchievementModal'
 import BirthdayLetter from './components/BirthdayLetter'
 import CandleGame from './components/CandleGame'
+import Ending from './components/Ending'
 import GiftBox from './components/GiftBox'
 import Greeting from './components/Greeting'
 import MusicButton from './components/MusicButton'
@@ -24,7 +25,10 @@ function App() {
         {currentStep === 'wish' && (
           <WishGenerator onContinue={() => setCurrentStep('letter')} />
         )}
-        {currentStep === 'letter' && <BirthdayLetter />}
+        {currentStep === 'letter' && (
+          <BirthdayLetter onContinue={() => setCurrentStep('ending')} />
+        )}
+        {currentStep === 'ending' && <Ending />}
         <AchievementModal
           open={achievementUnlocked}
           onContinue={() => {

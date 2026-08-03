@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-function BirthdayLetter() {
+function BirthdayLetter({ onContinue }) {
   return (
     <section className="birthday-letter" aria-labelledby="letter-title">
       <motion.article
@@ -21,6 +21,9 @@ function BirthdayLetter() {
           Keep being curious, stubborn in the best way, and proudly yourself.
           Today is yours.
         </p>
+        <button className="letter-button" type="button" onClick={onContinue}>
+          Finish
+        </button>
       </motion.article>
     </section>
   )
